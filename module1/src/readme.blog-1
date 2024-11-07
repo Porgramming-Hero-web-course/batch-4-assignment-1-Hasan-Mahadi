@@ -5,7 +5,7 @@
 
 Answer:
 
-# Union and intersection types both are very important in TypeScript, because they help to combine different types of values ​​and structures.
+# Union and intersection types both are very important in TypeScript, because they help to combine different types of values ​​and structures...
 
 
 # Union Type: It allows users to accept any one of the multiple types. For example, string | number union type can be either string or number.
