@@ -1,46 +1,44 @@
 {
-    //Define a union type Circle and Rectangle, where each type has a unique shape property. Create a function calculateShapeArea that uses type guards to calculate the area based on the shape type.
+  //
+  //Problem 4: Define a union type Circle and Rectangle, where each type has a unique shape property. Create a function calculateShapeArea that uses type guards to calculate the area based on the shape type.
 
-    type Shape = Circle | Rectangle;  // where each type has a unique shape property  
+  type Circle = {
+    shape: "circle";
+    radius: number;
+  };
+  type Rectangle = {
+    shape: "rectangle";
+    width: number;
+    height: number;
+  };
 
+  type Shape = Circle | Rectangle;
 
-    type Circle = {
-        shape: "circle";
-        radius: number;
-    };
-
-    type Rectangle = {
-        shape: "rectangle";
-        widht: number;
-        height: number;
+  const calculateShapeArea = (shape: Shape) => {
+    if ("shape" in shape && shape.shape === "circle") {
+      return Math.PI * shape.radius * shape.radius;
+    } else if ("shape" in shape && shape.shape === "rectangle") {
+      return shape.width * shape.height;
+    } else {
+      return 0;
     }
+  };
 
+  // Sample Input 1:
+  const circleArea = calculateShapeArea({ shape: "circle", radius: 5 });
+  // Sample Output 1:
+  console.log(circleArea);
+  //78.54;
 
+  // Sample Input 2:
+  const rectangleArea = calculateShapeArea({
+    shape: "rectangle",
+    width: 4,
+    height: 6,
+  });
+  // Sample Output 2:
+  console.log(rectangleArea);
+  //24;
 
-    const calculateShapeArea = (shape: Shape) => {
-
-        if (shape.shape === "circle") {
-            return Math.PI * Math.pow(shape.radius, 2);
-
-        } else if (shape.shape === "rectangle") {
-            return shape.widht * shape.height;
-        }
-
-    };
-
-    const circleArea = calculateShapeArea({ shape: "circle", radius: 5 });
-    console.log(circleArea);
-    
-
-
-    const rectangleArea = calculateShapeArea({
-        shape: "rectangle",
-        widht: 4,
-        height: 6,
-    });
-
-    console.log(rectangleArea);
-
-
-
+  //
 }

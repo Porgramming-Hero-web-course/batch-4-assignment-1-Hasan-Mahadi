@@ -1,3 +1,3 @@
 "use strict";
-var course = "next level developer hasan";
+let course = "next level developer hasaN";
 console.log(course);
